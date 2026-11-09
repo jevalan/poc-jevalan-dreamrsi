@@ -1,0 +1,210 @@
+{
+  "dataset": {
+    "schema": "dream-sri/task-dataset-v1",
+    "sourceSnapshot": {
+      "catalog_updated": "2026-10-07",
+      "assessments_updated": "2026-10-31",
+      "fit_definition": "../../jev-hub-catalog/data/fit.json"
+    },
+    "labelKind": "curated_expected_fit",
+    "caseOrigin": "synthetic_prompt"
+  },
+  "schema": "dream-sri/evaluation-v1",
+  "target": "expected_fit_classification",
+  "trainingCaseIds": [
+    "routing-train-01",
+    "review-train-01",
+    "context-train-01",
+    "gates-train-01",
+    "supervision-train-01"
+  ],
+  "holdoutCaseIds": [
+    "routing-holdout-01",
+    "review-holdout-01",
+    "context-holdout-01",
+    "gates-holdout-01",
+    "supervision-holdout-01"
+  ],
+  "trainingSearch": [
+    {
+      "alpha": 0.25,
+      "cases": [
+        "routing-train-01",
+        "review-train-01",
+        "context-train-01",
+        "gates-train-01",
+        "supervision-train-01"
+      ],
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1
+    },
+    {
+      "alpha": 0.5,
+      "cases": [
+        "routing-train-01",
+        "review-train-01",
+        "context-train-01",
+        "gates-train-01",
+        "supervision-train-01"
+      ],
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1
+    },
+    {
+      "alpha": 1,
+      "cases": [
+        "routing-train-01",
+        "review-train-01",
+        "context-train-01",
+        "gates-train-01",
+        "supervision-train-01"
+      ],
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1
+    },
+    {
+      "alpha": 2,
+      "cases": [
+        "routing-train-01",
+        "review-train-01",
+        "context-train-01",
+        "gates-train-01",
+        "supervision-train-01"
+      ],
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1
+    }
+  ],
+  "baseline": {
+    "policy": "majority-fit-v1",
+    "prediction": "context",
+    "metrics": {
+      "correct": 1,
+      "total": 5,
+      "accuracy": 0.2,
+      "coverage": 1,
+      "abstentions": 0
+    },
+    "predictions": [
+      {
+        "caseId": "routing-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "routing",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "review-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "review",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "context-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "context",
+        "labelMatch": true,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "gates-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "gates",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "supervision-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "supervision",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      }
+    ]
+  },
+  "optimized": {
+    "policy": "optimized-naive-bayes-v1",
+    "parameters": {
+      "alpha": 0.25
+    },
+    "trainingAccuracy": 1,
+    "metrics": {
+      "correct": 3,
+      "total": 5,
+      "accuracy": 0.6,
+      "coverage": 1,
+      "abstentions": 0
+    },
+    "predictions": [
+      {
+        "caseId": "routing-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "routing",
+        "expectedFit": "routing",
+        "labelMatch": true,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "review-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "review",
+        "expectedFit": "review",
+        "labelMatch": true,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "context-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "context",
+        "labelMatch": true,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "gates-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "context",
+        "expectedFit": "gates",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      },
+      {
+        "caseId": "supervision-holdout-01",
+        "partition": "holdout",
+        "predictedFit": "gates",
+        "expectedFit": "supervision",
+        "labelMatch": false,
+        "observationKind": "curated_expected_fit",
+        "candidateOutcome": null
+      }
+    ]
+  },
+  "comparison": {
+    "accuracyDelta": 0.4,
+    "sameHoldoutCases": true
+  },
+  "limits": [
+    "Labels are curator-assigned intentions on synthetic prompts, not measured tool outcomes.",
+    "Five holdout cases are too few to support a generalization claim.",
+    "No candidate was executed; cost, latency, and candidate success are not measured."
+  ]
+}

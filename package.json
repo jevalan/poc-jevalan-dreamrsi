@@ -1,0 +1,23 @@
+{
+  "name": "poc-jevalan-dreamsri",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "decide": "node src/cli.mjs",
+    "optimize": "node src/optimize.mjs",
+    "replay": "node src/replay.mjs",
+    "evaluate": "node src/evaluate-cli.mjs",
+    "lab": "node src/lab-server.mjs",
+    "prelab": "vite build --config src/lab-ui/vite.config.js",
+    "dev:lab": "vite --config src/lab-ui/vite.config.js --host 127.0.0.1",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@xyflow/svelte": "^1.7.1",
+    "svelte": "^5.57.3",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "catalog": {
+    "source": "jev-awesome/awesome-jev/data/projects.json",
+    "catalogUpdated": "2026-10-07",
+    "assessmentsUpdated": "2026-10-31"
+  },
+  "decision": {
+    "schema": "dream-sri/decision-v1",
+    "policy": "baseline-v1",
+    "selectionRule": "decision_yes_fit_exact_repo_id_ascending",
+    "fit": "routing",
+    "status": "selected",
+    "candidate": "BillionsBobby/JevRouter",
+    "candidateEvidence": "measured",
+    "reasons": [
+      "decision_yes",
+      "fit_match"
+    ]
+  }
+}

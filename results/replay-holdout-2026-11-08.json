@@ -1,0 +1,64 @@
+{
+  "schema": "dream-sri/replay-v1",
+  "policyVersion": "optimized-naive-bayes-v1",
+  "datasetSchema": "dream-sri/task-dataset-v1",
+  "sourceSnapshot": {
+    "catalog_updated": "2026-10-07",
+    "assessments_updated": "2026-10-31",
+    "fit_definition": "../../jev-hub-catalog/data/fit.json"
+  },
+  "labelKind": "curated_expected_fit",
+  "partition": "holdout",
+  "summary": {
+    "correct": 3,
+    "total": 5,
+    "accuracy": 0.6
+  },
+  "experiences": [
+    {
+      "caseId": "routing-holdout-01",
+      "partition": "holdout",
+      "predictedFit": "routing",
+      "expectedFit": "routing",
+      "labelMatch": true,
+      "observationKind": "curated_expected_fit",
+      "candidateOutcome": null
+    },
+    {
+      "caseId": "review-holdout-01",
+      "partition": "holdout",
+      "predictedFit": "review",
+      "expectedFit": "review",
+      "labelMatch": true,
+      "observationKind": "curated_expected_fit",
+      "candidateOutcome": null
+    },
+    {
+      "caseId": "context-holdout-01",
+      "partition": "holdout",
+      "predictedFit": "context",
+      "expectedFit": "context",
+      "labelMatch": true,
+      "observationKind": "curated_expected_fit",
+      "candidateOutcome": null
+    },
+    {
+      "caseId": "gates-holdout-01",
+      "partition": "holdout",
+      "predictedFit": "context",
+      "expectedFit": "gates",
+      "labelMatch": false,
+      "observationKind": "curated_expected_fit",
+      "candidateOutcome": null
+    },
+    {
+      "caseId": "supervision-holdout-01",
+      "partition": "holdout",
+      "predictedFit": "gates",
+      "expectedFit": "supervision",
+      "labelMatch": false,
+      "observationKind": "curated_expected_fit",
+      "candidateOutcome": null
+    }
+  ]
+}

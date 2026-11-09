@@ -1,0 +1,84 @@
+{
+  "schema": "dream-sri/task-dataset-v1",
+  "source_snapshot": {
+    "catalog_updated": "2026-10-07",
+    "assessments_updated": "2026-10-31",
+    "fit_definition": "../../jev-hub-catalog/data/fit.json"
+  },
+  "case_origin": "synthetic_prompt",
+  "label_kind": "curated_expected_fit",
+  "label_meaning": "Intended functional category only; not a measured candidate outcome.",
+  "partition_method": "Fixed stratified split: one training and one holdout case per fit group.",
+  "cases": [
+    {
+      "id": "routing-train-01",
+      "partition": "train",
+      "request": "Tengo una incidencia que puede requerir revisión de código o análisis de permisos. Compara las capacidades disponibles y elige a qué especialista derivarla.",
+      "expected_fit": "routing",
+      "label_rationale": "La decisión principal es asignar la petición al especialista adecuado."
+    },
+    {
+      "id": "routing-holdout-01",
+      "partition": "holdout",
+      "request": "Para una petición nueva, decide cuál de varias herramientas debe atenderla usando lo que cada una sabe hacer.",
+      "expected_fit": "routing",
+      "label_rationale": "El trabajo consiste en comparar opciones y seleccionar un destino."
+    },
+    {
+      "id": "review-train-01",
+      "partition": "train",
+      "request": "Inspecciona este cambio del parser, localiza un posible defecto y justifica la conclusión con las líneas de código relevantes.",
+      "expected_fit": "review",
+      "label_rationale": "La petición exige revisar código y aportar evidencia del defecto."
+    },
+    {
+      "id": "review-holdout-01",
+      "partition": "holdout",
+      "request": "Comprueba si el nuevo manejo de autenticación deja pasar un caso inválido y señala qué evidencia del diff respalda tu respuesta.",
+      "expected_fit": "review",
+      "label_rationale": "La tarea es encontrar y justificar un problema en un cambio de código."
+    },
+    {
+      "id": "context-train-01",
+      "partition": "train",
+      "request": "Resume las decisiones y restricciones útiles de las notas de sesiones anteriores para continuar esta migración.",
+      "expected_fit": "context",
+      "label_rationale": "La tarea recupera y condensa memoria previa para dar contexto al trabajo actual."
+    },
+    {
+      "id": "context-holdout-01",
+      "partition": "holdout",
+      "request": "De los registros anteriores, conserva solo los hechos necesarios para retomar el diagnóstico sin repetir pasos ya completados.",
+      "expected_fit": "context",
+      "label_rationale": "La tarea selecciona información histórica relevante y evita repetir trabajo."
+    },
+    {
+      "id": "gates-train-01",
+      "partition": "train",
+      "request": "Antes de ejecutar este comando de instalación, determina si intenta leer credenciales o escribir fuera del directorio de trabajo.",
+      "expected_fit": "gates",
+      "label_rationale": "La petición evalúa riesgo y permisos antes de permitir una acción."
+    },
+    {
+      "id": "gates-holdout-01",
+      "partition": "holdout",
+      "request": "Revisa el plan de una herramienta y decide si sus operaciones respetan las restricciones de acceso definidas para esta sesión.",
+      "expected_fit": "gates",
+      "label_rationale": "La función central es autorizar o bloquear una acción según límites de acceso."
+    },
+    {
+      "id": "supervision-train-01",
+      "partition": "train",
+      "request": "El agente terminó la implementación pero todavía no ejecutó las comprobaciones pedidas. Decide si debe continuar, pedir ayuda o finalizar.",
+      "expected_fit": "supervision",
+      "label_rationale": "La tarea supervisa el progreso del agente y decide el siguiente paso del ciclo."
+    },
+    {
+      "id": "supervision-holdout-01",
+      "partition": "holdout",
+      "request": "Tras varios intentos fallidos, evalúa el estado del trabajo y determina si conviene reintentar, escalar al usuario o detenerse.",
+      "expected_fit": "supervision",
+      "label_rationale": "La petición coordina la continuación, escalado o parada del agente."
+    }
+  ]
+}
